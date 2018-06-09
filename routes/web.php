@@ -6,6 +6,11 @@ use App\Models\Post;
 use App\Models\Task;
 use App\Models\Category;
 
+Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function(){
+    Route::get('/', 'DashboardController@dashboard')->name('admin.index');
+});
+
+
 Route::get('welcome', function () {
     return view('welcome');
 });
