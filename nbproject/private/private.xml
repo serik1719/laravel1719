@@ -3,16 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/OSPanel/domains/laravel1719/app/Models/Category.php</file>
-            <file>file:/C:/OSPanel/domains/laravel1719/resources/views/admin/categories/create.blade.php</file>
-            <file>file:/C:/OSPanel/domains/laravel1719/resources/views/admin/categories/index.blade.php</file>
-            <file>file:/C:/OSPanel/domains/laravel1719/resources/views/admin/categories/partials/form.blade.php</file>
-            <file>file:/C:/OSPanel/domains/laravel1719/app/Http/Controllers/Admin/CategoryController.php</file>
+            <file>file:/C:/OSPanel/domains/laravel1719/app/Http/Controllers/Admin/ArticleController.php</file>
+            <file>file:/C:/OSPanel/domains/laravel1719/database/migrations/2018_06_11_201432_create_articles_table.php</file>
             <file>file:/C:/OSPanel/domains/laravel1719/routes/web.php</file>
-            <file>file:/C:/OSPanel/domains/laravel1719/resources/views/admin/categories/partials/categories.blade.php</file>
+            <file>file:/C:/OSPanel/domains/laravel1719/app/Models/Article.php</file>
             <file>file:/C:/OSPanel/domains/laravel1719/resources/views/admin/layouts/app_admin.blade.php</file>
-            <file>file:/C:/OSPanel/domains/laravel1719/resources/views/admin/components/breadcrumb.blade.php</file>
-            <file>file:/C:/OSPanel/domains/laravel1719/database/migrations/2018_06_06_175514_create_categories_table.php</file>
+            <file>file:/C:/OSPanel/domains/laravel1719/resources/views/admin/articles/index.blade.php</file>
         </group>
     </open-files>
 </project-private>

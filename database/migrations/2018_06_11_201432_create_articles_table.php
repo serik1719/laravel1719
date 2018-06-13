@@ -22,7 +22,7 @@ class CreateArticlesTable extends Migration
             $table->string('image')->nullable();            //  Изображение к новости
             $table->boolean('image_show')->nullable();      //  Отображать/Не отображать изображение
             $table->string('meta_title')->nullable();       //  Мета заголовок
-            $table->string('meta_desription')->nullable();  //  Мета описание
+            $table->string('meta_description')->nullable();  //  Мета описание
             $table->string('meta_keyword')->nullable();     //  Ключевые слова
             $table->boolean('published');                   //  Опубликована/Неопубликована
             $table->integer('viewed')->nullable();          //  Количество просмотров

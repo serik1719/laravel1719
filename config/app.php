@@ -147,7 +147,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,              //  Устанавливал Laravel Debugbar
-
+        Unisharp\Ckeditor\ServiceProvider::class,               // 14:00 https://www.youtube.com/watch?v=jAloBzx1lwI&index=11&list=PLD5U-C5KK50UaCJFcN8Zh7MnSnj4MbrZP
+        
         /*
          * Package Service Providers...
          */

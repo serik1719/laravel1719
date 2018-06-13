@@ -41,9 +41,12 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
-if (env('APP_DEBUG')) {
- $app->register(Barryvdh\Debugbar\LumenServiceProvider::class);
-}
+//  Закомментировал, ибо выдавалась ошибка при вызове команды ↓
+//  php artisan config:cache
+//  рекомендацию взял с https://my-biz.com.ua/news/1195/65/oshibka-Laravel-PHP-Fatal-error-Uncaught-ReflectionException-Class-config-does-not-exist-in-Container-php-738
+//if (env('APP_DEBUG')) {
+// $app->register(Barryvdh\Debugbar\LumenServiceProvider::class);
+//}
 
 
 /*
