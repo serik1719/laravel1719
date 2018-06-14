@@ -17,7 +17,7 @@ class Article extends Model
     }
     
     // Polymorphic relation with categories
-    public function categoris() {
-        return $this->morphMany('App\Category', 'categoryable');
+    public function categories() {
+        return $this->morphToMany('App\Models\Category', 'categoryable');
     }
 }

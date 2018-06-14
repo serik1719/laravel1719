@@ -9,15 +9,16 @@
     @endif
 </select>
 <label for=""> Заголовок </label>
-<input type="text" class="form-control" name="title" placeholder="Заголовок новости" value="{{$category->title or ""}}" required>
+<input type="text" class="form-control" name="title" placeholder="Заголовок новости" value="{{$article->title or ""}}" required>
 
 <label for=""> Slug (Уникальное значение) </label>
-<input type="text" class="form-control" name="slug" placeholder="Автоматическая генерация" value="{{$category->slug or ""}}" readonly="">
+<input type="text" class="form-control" name="slug" placeholder="Автоматическая генерация" value="{{$article->slug or ""}}" readonly="">
 
 <label for=""> Родительская категория </label>
-<select class="form-control" name="categoris[]" multiple="">
+<select class="form-control" name="categories[]" multiple="">
     <option value="0">-- без родительской категории --</option>
-    @include('admin.articles.partials.categories', ['articles' => $article])
+    
+    @include('admin.articles.partials.categories', ['categories' => $categories])
 </select>
 
 <label for=""> Краткое описание </label>
