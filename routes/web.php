@@ -6,30 +6,38 @@ use App\Models\Post;
 use App\Models\Task;
 use App\Models\Category;
 
+Route::get('/blog/category/{slug?}', 'BlogController@category')->name('category');
+Route::get('/blog/article/{slug?}', 'BlogController@article')->name('article');
+
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function(){
     Route::get('/', 'DashboardController@dashboard')->name('admin.index');
     Route::resource('/category', 'CategoryController', ['as'=>'admin']);
     Route::resource('/article', 'ArticleController', ['as'=>'admin']);
 });
 
+Route::get('/', function () {
+    return view('blog.home');
+});
+
+
+
 
 Route::get('welcome', function () {
     return view('welcome');
 });
-
 
 //DB::listen(function($query) {
 //    var_dump($query->sql, $query->bindings);
 //});
 
 //  Tasks - Задачи  --->
-Route::get('/', function () {
-    $tasks = Task::orderBy('created_at', 'asc')->get();
-    
-    return view('tasks', [
-        'tasks' => $tasks
-    ]);
-});
+//Route::get('/', function () {
+//    $tasks = Task::orderBy('created_at', 'asc')->get();
+//    
+//    return view('tasks', [
+//        'tasks' => $tasks
+//    ]);
+//});
 
 Route::post('/task', function (Request $request) {
   
