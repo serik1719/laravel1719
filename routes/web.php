@@ -8,11 +8,13 @@ use App\Models\Category;
 
 Route::get('/blog/category/{slug?}', 'BlogController@category')->name('category');
 Route::get('/blog/article/{slug?}', 'BlogController@article')->name('article');
+Route::get('/product/{id}', 'ProductController@show')->name('product');
 
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function(){
     Route::get('/', 'DashboardController@dashboard')->name('admin.index');
     Route::resource('/category', 'CategoryController', ['as'=>'admin']);
     Route::resource('/article', 'ArticleController', ['as'=>'admin']);
+    Route::resource('/product', 'ProductController', ['as'=>'admin']);
 });
 
 Route::get('/', function () {

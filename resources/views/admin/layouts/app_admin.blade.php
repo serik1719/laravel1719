@@ -27,30 +27,31 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <a class="navbar-brand" href="{{ url('/posts') }}">
-                    {{ config('posts.index', 'Посты') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="dropdown">
-                            <a class="navbar-brand" href="{{route('admin.index')}}"> Панель состояния </a>
+                        <li><a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a></li>
+                        <li><a class="nav-link active" href="{{ url('/posts') }}">{{ config('posts.index', 'Посты') }}</a></li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{route('admin.index')}}"> Панель состояния </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href="#" class="navbar-brand" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Развернуть
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Развернуть
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{route('admin.category.index')}}"> Категория </a>
                                 <a class="dropdown-item" href="{{route('admin.article.index')}}"> Материалы </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#oth"> Прочее </a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Товары
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#"> Категории товаров </a>
+                                <a class="dropdown-item" href="{{route('admin.product.index')}}"> Товары </a>
                             </div>
                         </li>
                     </ul>

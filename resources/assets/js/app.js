@@ -8,8 +8,8 @@
 require('./bootstrap');
 
 $( document ).ready(function () {
-    CKEDITOR.replace( 'description_short' );
     CKEDITOR.replace( 'description' );
+    CKEDITOR.replace( 'description_short' );
 })
 
 window.Vue = require('vue');
