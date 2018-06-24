@@ -50,7 +50,7 @@
                             <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Товары
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#"> Категории товаров </a>
+                                <a class="dropdown-item" href="{{route('admin.product_category.index')}}"> Категории товаров </a>
                                 <a class="dropdown-item" href="{{route('admin.product.index')}}"> Товары </a>
                             </div>
                         </li>

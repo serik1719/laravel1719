@@ -2,8 +2,15 @@
 
 <br>
 <select class="form-control" name="product_category_id">
-    <option value="0">-- без категории --</option>
+    <option value="0" @if (isset($product) && $product->product_category_id == 0) selected="" @endif >-- без категории --</option>
+    @foreach ($product_categories as $product_category)
+        <option value="{{ $product_category->id }}" @if ($product->product_category_id == $product_category->id) selected="" @endif >{{ $product_category->name }}</option>
+    @endforeach
 </select>
+
+<br>
+
+<input type="text" class="form-control" name="" placeholder="Создатель" value="{{$product->user->name or ""}}" readonly="">
 
 <br>
 

@@ -9,17 +9,22 @@
 <hr>
 
 <a href="{{route('admin.product.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus-square-o"></i> Добавить товар </a>
-<table class="table table-striped">
+<table class="table table-striped text-center">
     <thead>
         <th><h4><b> Наименование </b></h4></th>
-        <th><h4><b> Обычный/Новинка </b></h4></th>
-        <th class="text-right"><h4><b> Действие </b></h4></th>
+        <th><h4><b> Категория </b></h4></th>
+        <th><h4><b> Создатель </b></h4></th>
+        <th><h4><b> Новизна </b></h4></th>
+        <th><h4><b> Действие </b></h4></th>
+    </thead>
     <tbody>
         @forelse ($products as $product)
             <tr>
                 <td>{{$product->name}}</td>
+                <td>{{isset($product->product_category->name) ? $product->product_category->name : 'Без категории'}}</td>
+                <td>{{$product->user->name}}</td>
                 <td><?=($product->novelty == 1) ? '<b>Новинка</b>' : 'Обычный'?></td>
-                <td class="text-right">
+                <td>
                     <form onsubmit="if(confirm('Удалить?')){ return true }else{ return false }" action="{{route('admin.product.destroy', $product)}}" method="post">
                         <input type="hidden" name="_method" value="DELETE">
                             {{ csrf_field() }}
@@ -31,18 +36,17 @@
             </tr>
         @empty
             <tr>
-                <td colspan="3" class="text-center"><h2> Данные отсутствуют </h2></td>
+                <td colspan="3"><h2> Данные отсутствуют </h2></td>
             </tr>
         @endforelse
     </tbody>
     <tfoot>
-        <tr>
-            <td colspan="3">
+        <tr class="text-right">
+            <td colspan="6">
                 <ul class="pagination pull-right">{{$products->links()}}</ul>
             </td>
         </tr>
     </tfoot>
-    </thead>
 </table>
 
 @endsection
